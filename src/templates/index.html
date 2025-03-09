@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujo IA</title>
+</head>
+<body>
+    <h1>Bienvenido a Dibujo IA</h1>
+    <p>Sube una imagen para analizar su calidad.</p>
+
+    <form action="/procesar" method="post" enctype="multipart/form-data">
+        <label for="imagen">Selecciona una imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required title="Selecciona una imagen para subir" placeholder="Selecciona una imagen">
+        <button type="submit">Subir y analizar</button>
+    </form>
+
+    {% if resultado %}
+    <h2>Resultado del análisis:</h2>
+    <p>{{ resultado }}</p>
+    <img src="{{ url_for('static', filename='imagen_procesada.png') }}" alt="Imagen procesada">
+    {% endif %}
+</body>
+</html>
