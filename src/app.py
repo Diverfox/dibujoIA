@@ -7,7 +7,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "src/static/"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-@app.route('/')
+@app.route('https://diverfox.github.io/dibujoIA/')
 def index():
     return render_template('index.html')
 
